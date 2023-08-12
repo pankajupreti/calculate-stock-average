@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'calculatorAverage';
+  buy1Price: number = 0;
+  qty1: number = 0;
+  buy2Price: number = 0;
+  qty2: number = 0;
+  averagePrice: number = 0;
+  totalAmountInvested: number = 0;
+
+  calculate() {
+    const sumOfPrices = this.buy1Price * this.qty1 + this.buy2Price * this.qty2;
+    const totalQuantity = this.qty1 + this.qty2;
+  
+    const calculatedAveragePrice = sumOfPrices / totalQuantity;
+    this.averagePrice = Number(calculatedAveragePrice.toFixed(2)); // Calculate and round to 2 decimal places
+  
+    this.totalAmountInvested = sumOfPrices;
+
+  }
 }
