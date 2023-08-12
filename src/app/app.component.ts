@@ -13,6 +13,10 @@ export class AppComponent {
   averagePrice: number = 0;
   totalAmountInvested: number = 0;
 
+  initialPrice: number =0;
+  currentPrice: number =0;
+  percentageMove: number =0;
+
   calculate() {
     const sumOfPrices = this.buy1Price * this.qty1 + this.buy2Price * this.qty2;
     const totalQuantity = this.qty1 + this.qty2;
@@ -23,4 +27,14 @@ export class AppComponent {
     this.totalAmountInvested = sumOfPrices;
 
   }
+
+  calculatePercentageMove() {
+    if (this.initialPrice && this.currentPrice) {
+      this.percentageMove = ((this.currentPrice - this.initialPrice) / this.initialPrice) * 100;
+    }
+  }
+
+
+
+
 }

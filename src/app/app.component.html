@@ -36,4 +36,33 @@
     <p><strong>Average Buy Price:</strong> {{ averagePrice }}</p>
     <p><strong>Total Amount Invested:</strong> {{ totalAmountInvested }}</p>
   </div>
+
+    <!-- Add spacing before the new section -->
+    <div class="mt-4"></div>
+
+ <!-- New section for Percentage Move -->
+ <div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label>Initial Price:</label>
+      <input [(ngModel)]="initialPrice" type="number" class="form-control">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label>Current Price:</label>
+      <input [(ngModel)]="currentPrice" type="number" class="form-control">
+    </div>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-md-12 text-center">
+    <button (click)="calculatePercentageMove()" class="btn btn-primary">Calculate % move</button>
+  </div>
+</div>
+<div *ngIf="percentageMove" class="mt-4">
+  <!-- ... Existing code ... -->
+  <p><strong>Percentage Move:</strong> {{ percentageMove }}%</p>
+</div>
+
 </div>
